@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Tour({tour}) {
+export default function Tour({tour, removeTour}) {
   const { id, image, info, name, price } = tour
 
   const [readMore, setReadMore] = useState(false);
@@ -19,7 +19,7 @@ export default function Tour({tour}) {
         <button onClick={() => {setReadMore(!readMore)}}>
           {readMore ? 'show less' : 'read more' }
         </button>
-        <button className="delete-btn">
+        <button onClick={() => removeTour(id)} className="delete-btn">
           Delete
         </button>
       </footer>
